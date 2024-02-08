@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootballLeague.LeagueList">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="AliceBlue" >
+            <Label HorizontalOptions="Center"  Text="Название клуба:" FontAttributes="Bold" FontSize="35" TextColor="Black" />
+
+            <Entry x:Name="AddEntry"/>
+            <Button Clicked="AddButton" BackgroundColor="AliceBlue" Text="Добавить"></Button>
+            <Button Clicked="EditButton" BackgroundColor="AliceBlue" Text="Сохранить"></Button>
+            <Button Clicked="DeleteButton" BackgroundColor="AliceBlue" Text="Удалить"></Button>
+            <Label HorizontalTextAlignment="Center" Text="" FontSize="26" x:Name="messagelabel"/>
+            <ListView x:Name="AllItem"  Grid.Row="0" Grid.Column="0" ItemSelected="AllItem_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Name}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
